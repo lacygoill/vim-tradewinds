@@ -155,15 +155,6 @@ CTRL-W g l  Move the current window to a new horizontal split of the window
 Mapping customization~
                                                        *tradewinds-custom-maps*
 
-To disable all maps, use 
->
-    let g:tradewinds_no_maps = 1
-<
-If you would like to change the map prefix from `ctrl-w g`, use for
-instance,
->
-    let g:tradewinds_prefix = '<c-w>e'
-<
 If you want full control, make your own mappings
 >
     nmap <leader>h <plug>(tradewinds-h)
@@ -174,12 +165,6 @@ If you want full control, make your own mappings
 trade winds won't try to make its usual maps if you have made your own,
 and it wont step on your existing maps.
 
-                                                     *tradewinds-terminal-maps*
-
-In vim only, the same maps are available in the :terminal.  To disable these,
->
-    let g:tradewinds_no_terminal_maps = 1
-<
                                                                *TradewindsMove*
 
 Alternatively, you can make maps which use the `TradewindsMove` command:
@@ -192,20 +177,6 @@ Alternatively, you can make maps which use the `TradewindsMove` command:
     nnoremap <silent> <c-w>g<right> :TradewindsMove l<cr>
 <
 
-==============================================================================
-CUSTOMIZATION                                        *tradewinds-customization*
-
-Before moving a window, trade winds looks for a variable named
-`g:tradewinds#prepare`.  This can be set to a reference or name of a
-function which takes two arguments: the current window number and the
-target window number.  Returning 1 will cancel the movement.
-
-After a window move is performed, trade winds fires the `User` autocmd
-`TradeWindsAfterVoyage`.  This can be used, for example, to fix up
-statuslines or other window properties:
->
-    autocmd User TradeWindsAfterVoyage call DoSomething()
-<
 ==============================================================================
 CAVEATS                                                    *tradewinds-caveats*
 
