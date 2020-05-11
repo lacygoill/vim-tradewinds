@@ -3,7 +3,7 @@ if exists('g:loaded_tradewinds')
 endif
 let g:loaded_tradewinds = 1
 
-com -nargs=1 TradewindsMove call tradewinds#softmove(<q-args>)
+com -bar -nargs=1 TradewindsMove call tradewinds#softmove(<q-args>)
 
 " these plug  mappings are useful  to make  the commands repeatable  without the
 " `C-w` prefix, via our submode api
