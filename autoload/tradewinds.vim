@@ -6,7 +6,7 @@ fu tradewinds#softmove(dir) abort "{{{2
 
     " if there is only one window just cause a beep
     if winnr('$') == 1
-        exe 'wincmd '..toupper(a:dir)
+        exe 'wincmd ' .. toupper(a:dir)
         return
     endif
 
@@ -20,7 +20,7 @@ fu s:softmove(dir) abort "{{{2
 
     " hard HJKL movements can be used here
     if target == 0 || target == winnr()
-        exe 'wincmd '..toupper(a:dir)
+        exe 'wincmd ' .. toupper(a:dir)
         return
     endif
 
@@ -38,7 +38,7 @@ fu s:softmove(dir) abort "{{{2
     if a:dir is# 'h' || a:dir is# 'l'
         if pos[0] +
         \ (winheight(0) >= winheight(target)
-        \   ? winline()-1 : winheight(0) / 2)
+        \   ? winline() - 1 : winheight(0) / 2)
         \ <= targetpos[0] + winheight(target) / 2
             let modifiers = {'rightbelow': 0}
         else
@@ -47,7 +47,7 @@ fu s:softmove(dir) abort "{{{2
     else
         if pos[1] +
         \ (winwidth(0) >= winwidth(target)
-        \   ? wincol()-1 : winwidth(0) / 2)
+        \   ? wincol() - 1 : winwidth(0) / 2)
         \ <= targetpos[1] + winwidth(target) / 2
             let modifiers = {'rightbelow': 0, 'vertical': 1}
         else
@@ -55,6 +55,6 @@ fu s:softmove(dir) abort "{{{2
         endif
     endif
 
-    call win_splitmove(winnr(), target, modifiers)
+    call winnr()->win_splitmove(target, modifiers)
 endfu
 
