@@ -12,7 +12,7 @@ nno <c-w>gj <plug>(tradewinds-j)
 nno <c-w>gk <plug>(tradewinds-k)
 nno <c-w>gl <plug>(tradewinds-l)
 
-nno <silent> <plug>(tradewinds-h) :<c-u>TradewindsMove h<cr>
-nno <silent> <plug>(tradewinds-j) :<c-u>TradewindsMove j<cr>
-nno <silent> <plug>(tradewinds-k) :<c-u>TradewindsMove k<cr>
-nno <silent> <plug>(tradewinds-l) :<c-u>TradewindsMove l<cr>
+nno <plug>(tradewinds-h) <cmd>TradewindsMove h<cr>
+nno <plug>(tradewinds-j) <cmd>TradewindsMove j<cr>
+nno <plug>(tradewinds-k) <cmd>TradewindsMove k<cr>
+nno <plug>(tradewinds-l) <cmd>TradewindsMove l<cr>
