@@ -5,7 +5,7 @@ var loaded = true
 
 # Interface {{{1
 def tradewinds#softmove(dir: string) #{{{2
-    if len(dir) != 1 || stridx('hjkl', dir) < 0
+    if strlen(dir) != 1 || stridx('hjkl', dir) < 0
         return
     endif
 
